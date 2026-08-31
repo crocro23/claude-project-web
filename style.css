@@ -1,0 +1,252 @@
+:root {
+    /* Variables de Thème Sombre */
+    --primary-color: #66a3ff;
+    --primary-dark-color: #4d8fdc;
+    --success-color: #6abc6a;
+    --danger-color: #ff6b6b;
+    --text-dark: #e0e0e0;
+    --background-light: #121212;
+    --background-white: #1e1e1e;
+    --border-color: #3a3a3a;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Styles de Base & Animations --- */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Transition générale pour tout changement de thème/style */
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Ajout de transition au header pour l'effet de thème */
+    transition: background-color 0.5s ease;
+}
+
+/* Bouton Thème */
+#themeToggleBtn {
+    background: none;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    margin-top: 10px;
+    transition: all 0.3s;
+}
+
+#themeToggleBtn:hover {
+    background-color: var(--primary-color);
+    color: var(--background-light); /* Change la couleur du texte/fond sur hover */
+}
+
+
+main {
+    padding: 20px;
+    flex-grow: 1;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* Ajout d'une animation de fade-in pour l'ensemble du contenu principal */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Keyframes pour l'apparition du contenu */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Styles pour les nouveaux blocs de contenu --- */
+
+/* ... (Le reste des styles de .image-container, .description-section, .cta-links, et .contact-form-section restent inchangés pour la clarté) */
+.image-container {
+    margin: 30px 0;
+    max-width: 800px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.image-container img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.description-section {
+    background-color: var(--background-white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 30px;
+    text-align: left;
+    opacity: 0; /* On contrôle l'opacité via JS */
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.2s; /* Petit délai pour l'effet */
+}
+
+.description-section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.description-section p, .description-section li {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.description-section ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.description-section li {
+    margin-bottom: 5px;
+}
+
+/* Bloc de CTA (Call to Action) pour les liens */
+.cta-links {
+    margin-top: 25px;
+    padding: 15px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cta-links a {
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.cta-links a:hover {
+    background-color: var(--primary-dark-color);
+}
+
+
+/* Styles du Formulaire de Contact */
+.contact-form-section {
+    background-color: var(--background-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 30px;
+    text-align: left;
+    opacity: 0; /* On contrôle l'opacité via JS */
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+.contact-form-section h2 {
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    transition: border-color 0.3s;
+}
+
+/* Styles de feedback pour l'erreur */
+.form-group input:invalid:focus,
+.form-group textarea:invalid:focus {
+    border-color: var(--danger-color);
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+.error-message {
+    color: var(--danger-color);
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+}
+
+
+/* --- Styles généraux --- */
+
+#content {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0s;
+}
+
+#myButton {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-top: 20px;
+    width: fit-content;
+    display: block;
+    /* Ajout d'une animation pour le bouton */
+    transition: all 0.3s ease;
+}
+
+#myButton:hover {
+    background-color: var(--primary-dark-color);
+    transform: translateY(-2px); /* Petit effet de soulèvement */
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #1a1a1a;
+    color: #aaa;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}

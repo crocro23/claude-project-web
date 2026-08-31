@@ -1,0 +1,33 @@
+Utilisez Claude Code sans abonnement ni API payante ! Ce tutoriel vous montre comment faire tourner l'agent de développement en local avec Ollama et le modèle GLM 4.7 Flash.
+
+Ollama vient d'intégrer une nouvelle commande "launch" qui simplifie drastiquement la connexion avec Claude Code. Fini les modifications de fichiers de config et les variables d'environnement à exporter manuellement ! En deux lignes de commande, vous pouvez coder avec Claude Code alimenté par des modèles open source sur votre propre machine.
+
+Cette méthode vous permet de profiter de tous les avantages de Claude Code (skills, MCP, procédures de développement intégrées) tout en gardant vos données en local et sans dépenser un centime. Le compromis ? La vitesse de génération dépend de votre hardware, mais avec 32 Go de RAM et un bon GPU, les résultats sont tout à fait utilisables.
+
+Ce qui est couvert dans cette vidéo :
+
+    Installation d'Ollama et téléchargement du modèle GLM 4.7 Flash
+    Installation de Claude Code via curl
+    La nouvelle commande "ollama launch" pour connecter les deux
+    Démonstration de création de page web HTML/CSS/JS
+    Alternative avec Open Code pour les modèles libres
+
+📌 Liens utiles :
+
+    Ollama : https://ollama.com
+    Claude Code : https://claude.ai/code
+    Mon site : https://korben.info
+    Me soutenir : https://patreon.com/korben
+
+👍 Abonnez-vous pour plus de tutos IA et développement local !
+
+CHAPITRAGE
+
+00:00 Introduction et nouveauté Ollama
+01:48 Prérequis : installer Ollama
+03:14 Télécharger le modèle GLM 4.7 Flash
+04:37 Installer Claude Code
+05:23 Lancer Claude Code avec Ollama
+06:47 Démo : création d'une page web
+09:38 Test avec Open Code
+11:07 Conclusion et remerciements
